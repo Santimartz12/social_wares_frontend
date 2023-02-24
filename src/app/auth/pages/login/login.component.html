@@ -1,1 +1,29 @@
-<p>login works!</p>
+<section class="login">
+
+    <app-banner></app-banner>
+
+    <h3 class="auth_title">Welcome To Wires</h3>
+
+    <div class="container_login">
+        <app-auth-btn Text="Sign Up" (onClickExecute)="goToSignUp()"></app-auth-btn>
+
+        <form class="login_form">
+            <label for="email">Email Adress</label>
+            <input type="email" name="email" id="email" placeholder="Example@gmail.com">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </form>
+
+        <app-primary-btn Texto="Sign In" (onClickFunction)="mostrar()"></app-primary-btn>
+
+        <div class="rememberMe_input">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Remember Me</label>
+        </div>
+
+    </div> 
+
+    <app-auth-footer></app-auth-footer>
+      
+
+</section>

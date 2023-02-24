@@ -14,8 +14,8 @@ export class RegisterComponent {
     console.log('Se imprimio el texto');
   }
 
-  goToSignUp(){
-    this.router.navigate(['']);
+  goToSignIn(){
+    this.router.navigate(['auth/login']);
   }
 
 }

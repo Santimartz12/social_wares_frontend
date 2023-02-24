@@ -5,21 +5,29 @@
     <h3 class="auth_title">Welcome To Wires</h3>
 
     <div class="container_register">
-        <app-auth-btn Text="Sign Up" (onClickExecute)="goToSignUp()"></app-auth-btn>
+        <app-auth-btn Text="Sign In" (onClickExecute)="goToSignIn()"></app-auth-btn>
 
         <form class="register_form">
+            
+            <label for="nickname">Nickname</label>
+            <input type="text" name="nickname" id="nickname" placeholder="Nickname">
+            
+            
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Full name">
+            
+            
             <label for="email">Email Adress</label>
             <input type="text" name="email" id="email" placeholder="Example@gmail.com">
+            
+            
+            <!-- TODO: Cambiar visibi lidad de la contraseña -->
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Password">
         </form>
 
-        <app-primary-btn Texto="Sign In" (onClickFunction)="mostrar()"></app-primary-btn>
 
-        <div class="rememberMe_input">
-            <input type="checkbox" id="rememberMe">
-            <label for="rememberMe">Remember Me</label>
-        </div>
+        <app-primary-btn Texto="Create" (onClickFunction)="mostrar()"></app-primary-btn>
 
     </div> 
 

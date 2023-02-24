@@ -16,6 +16,7 @@
 
 .container_register{
     max-width: 400px;
+    margin-bottom: 30px;
     width: 85%;
 } 
 
@@ -50,7 +51,7 @@
 
 .register_form input::placeholder {
 
-    color: var(--light_color);
+    color: var(--placeholders_color);
     font-weight: 500;
     font-family: var(--primary__font);
     font-size: 13px;

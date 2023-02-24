@@ -24,6 +24,7 @@
             <label for="email">Email Adress</label>
             <input type="text" name="email" id="email" formControlName="email" placeholder="Example@gmail.com">
             <span *ngIf="validarForm('email')">Escriba un correo electrónico válido</span>
+            <span *ngIf="emailUsed">Este correo ya ha sido utilizado</span>
             <div></div>
 
             <!-- TODO: Cambiar visibilidad de la contraseña -->

@@ -35,7 +35,7 @@ export class HeaderComponent {
   messages: Message[] = [];
 
   isMenuSelected = false;
-  isModalMsgSelected = true;
+  isModalMsgSelected = false;
 
   toogleMenu(){
     if(this.isMenuSelected){

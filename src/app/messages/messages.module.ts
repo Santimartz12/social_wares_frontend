@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CardsComponent } from './components/cards/cards.component';
 import { CreateComponent } from './pages/create/create.component';
 import { MymsgComponent } from './pages/mymsg/mymsg.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MymsgComponent } from './pages/mymsg/mymsg.component';
   imports: [
     CommonModule,
     MessagesRoutingModule,
+    HttpClientModule,
     SharedModule,
   ]
 })

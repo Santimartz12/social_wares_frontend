@@ -19,11 +19,24 @@
     width: 85%;
 } 
 
+.login_form span {
+    color: red;
+    font-family: var(--primary__font);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+
 .login_form{
     display: flex;
     flex-direction: column;
     margin: 20px 0;
     width: 100%;
+}
+
+.login_form div {
+    margin: 10px;
 }
 
 .login_form label {
@@ -43,7 +56,6 @@
     font-family: var(--primary__font);
     font-size: 13px;
     font-weight: 600;
-    margin: 0 0 20px 0;
     padding: 10px 15px;
     width: calc(100% - 30px);
 }
@@ -61,10 +73,6 @@
     width: 80%;
     margin: 20px 0;
     align-items: center;
-}
-
-.rememberMe_input input{
-    
 }
 
 .rememberMe_input label{

@@ -10,8 +10,8 @@ export class RegisterComponent {
 
   constructor(private router: Router){}
 
-  mostrar(){
-    console.log('Se imprimio el texto');
+  createUser(){
+    this.router.navigate(['home/messages']);
   }
 
   goToSignIn(){

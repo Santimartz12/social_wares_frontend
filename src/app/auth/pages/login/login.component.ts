@@ -10,8 +10,8 @@ export class LoginComponent {
 
   constructor(private router: Router){}
 
-  mostrar(){
-    console.log('Se imprimio el texto');
+  login(){
+    this.router.navigate(['home/messages']);
   }
 
   goToSignUp(){

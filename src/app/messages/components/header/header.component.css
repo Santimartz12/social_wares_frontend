@@ -1,0 +1,31 @@
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header_container{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    width: 85%;
+}
+
+.header__logo{
+    width: 170px;
+}
+
+.container_btns{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+button{
+    background-color: #ffffff00;
+    border: none;
+}
+
+/* TODO: Responsive en esta parte */

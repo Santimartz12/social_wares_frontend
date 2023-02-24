@@ -7,6 +7,7 @@ import { PrimaryBtnComponent } from './components/primary-btn/primary-btn.compon
 @NgModule({
   declarations: [
     PrimaryBtnComponent,
+
   ],
   exports: [
     PrimaryBtnComponent,

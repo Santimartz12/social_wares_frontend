@@ -33,7 +33,10 @@ export class LoginComponent {
 
   login() {
     
-    if(this.loginForm.invalid){return}
+    if(this.loginForm.invalid){
+      this.loginForm.markAllAsTouched();
+      return;
+    }
 
     //Construimos el objeto para publicarlo en la base de datos
     const newUser : UserLogin = {

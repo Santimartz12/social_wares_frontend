@@ -6,12 +6,12 @@
     <form class='create_forms' [formGroup]="createForm">
 
         <label for="title">Title messages</label>
-        <input type="text" formControlName="title" name="title" id="title" placeholder="Talk about me">
+        <input (keyup)="card()" type="text" formControlName="title" name="title" id="title" placeholder="Talk about me">
         <span *ngIf="validarForm('title')">El nickname debe tener al menos 4 caracteres</span>
         <div></div>
 
         <label for="message">Message</label>
-        <textarea name="message" id="message" cols="10" rows="10" formControlName='message'
+        <textarea (keyup)="card()" name="message" id="message" cols="10" rows="10" formControlName='message'
             placeholder="Create message for share white friends. Max 700 chars"></textarea>
         <span *ngIf="validarForm('message')">El nickname debe tener al menos 4 caracteres</span>
         <div></div>
@@ -21,7 +21,7 @@
         <app-primary-btn Texto="Share" (onClickFunction)="create()" ></app-primary-btn>
     </div>
 
-    <app-cards></app-cards>
+    <app-cards [messages]="message"></app-cards>
 
 
 </div>

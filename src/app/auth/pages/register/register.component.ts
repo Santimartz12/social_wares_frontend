@@ -34,7 +34,10 @@ export class RegisterComponent {
 
   //* Aqui creamos el usuario en la base de datos 
   createUser() {
-    if (this.registerForm.invalid) { return }
+    if(this.registerForm.invalid){
+      this.registerForm.markAllAsTouched();
+      return;
+    }
 
     //Construimos el objeto para publicarlo en la base de datos
     const newUser: Users = {

@@ -1,8 +1,8 @@
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Provider } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserLogin, Users, UsersNoPassword } from 'src/app/interfaces/users';
+import { UserCard, UserLogin, Users, UsersNoPassword } from 'src/app/interfaces/users';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ import { UserLogin, Users, UsersNoPassword } from 'src/app/interfaces/users';
 export class AuthService {
 
   private _baseUrl: string = 'http://localhost:4000/api';
+
+  users : UserCard[] = [];
 
 
   guardarLocalStg(user : UsersNoPassword){
@@ -30,7 +32,7 @@ export class AuthService {
   }
 
   constructor(private http: HttpClient) { 
-    
+    this.getAllUsers().subscribe(resp => this.users = resp);
   }
 
   registerUser(user : Users): Observable<UsersNoPassword>{
@@ -39,6 +41,10 @@ export class AuthService {
 
   LoginUser(user : UserLogin): Observable<UsersNoPassword>{
     return this.http.post<UsersNoPassword>(`${this._baseUrl}/auth/login`, user)
+  }
+
+  getAllUsers():Observable<UserCard[]>{
+    return this.http.get<UserCard[]>(`${this._baseUrl}/auth/users`);
   }
   
 }

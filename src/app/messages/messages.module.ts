@@ -10,6 +10,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { MymsgComponent } from './pages/mymsg/mymsg.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FullnamePipe } from '../pipes/fullname.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     CardsComponent,
     CreateComponent,
-    MymsgComponent
+    MymsgComponent,
+    FullnamePipe,
   ],
   imports: [
     ReactiveFormsModule,

@@ -9,3 +9,5 @@ export interface Users {
 export interface UsersNoPassword extends Omit<Users, 'password'> {}
 
 export interface UserLogin extends Omit<Users, 'id' | 'username' | 'fullname' > {}
+
+export interface UserCard extends Omit<Users, 'email' | 'password' | 'username'>{}

@@ -3,7 +3,7 @@
     <p class="message">{{message.message}}</p>
     <div class="info__user">
         <p class="time">{{message.time | date : "hh:mm a dd/mm/yy"}}</p>
-        <p class="user__name">{{message.user_id}}</p>
+        <p class="user__name">{{message.user_id | fullname}}</p>
     </div>
 </div>
 

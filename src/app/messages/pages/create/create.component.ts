@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateMessage } from 'src/app/interfaces/messages';
+import { CreateMessage, Message } from 'src/app/interfaces/messages';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
 
@@ -11,6 +11,8 @@ import { MessagesService } from 'src/app/shared/services/messages.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent {
+
+  message: Message[] = [];
 
   constructor(
     private fb: FormBuilder, 
@@ -30,7 +32,21 @@ export class CreateComponent {
       .errors && this.createForm.controls[campo.toString()].touched
   }
 
+  card(){
+    this.message = [{
+      message: this.createForm.controls['message'].value,
+      time: new Date().getUTCMilliseconds(),
+      title: this.createForm.controls['title'].value,
+      user_id: this.authServices.cargarLocalStg()?.id!,
+    }]
+  }
+
   create() {
+
+    if(this.createForm.invalid){
+      this.createForm.markAllAsTouched();
+      return;
+    }
 
     const id = this.authServices.cargarLocalStg()?.id!;
 

@@ -10,7 +10,7 @@
 
 <div class="modal__menu" *ngIf="isMenuSelected">
     <h3 class="modal__title">Santiago Martinez</h3>
-    <a class="link__option" *ngFor="let option of options" routerLink={{option.route}} routerLinkActive="active_option" (click)="isMenuSelected = false">
+    <a (click)="verificarlogout(option.text)" class="link__option" *ngFor="let option of options" routerLink={{option.route}} routerLinkActive="active_option" (click)="isMenuSelected = false">
         <div class='option_container'>
             <img src={{option.imgUrl}} alt="create" class="img_option">
             <p class="title_link_option">{{option.text}}</p>

@@ -3,18 +3,25 @@
 <div class="create__container">
     <h2 class="create__title">Create message</h2>
 
-    <label for="title">Title messages</label>
-    <input type="text" name="title" id="title" placeholder="Talk about me">
-    
-    
-    <label for="message">Message</label>
-    <textarea name="message" id="message" cols="10" rows="10" placeholder="Create message for share white friends. Max 700 chars"></textarea>
-    
+    <form class='create_forms' [formGroup]="createForm">
+
+        <label for="title">Title messages</label>
+        <input type="text" formControlName="title" name="title" id="title" placeholder="Talk about me">
+        <span *ngIf="validarForm('title')">El nickname debe tener al menos 4 caracteres</span>
+        <div></div>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="10" rows="10" formControlName='message'
+            placeholder="Create message for share white friends. Max 700 chars"></textarea>
+        <span *ngIf="validarForm('message')">El nickname debe tener al menos 4 caracteres</span>
+        <div></div>
+
+    </form>
     <div class="container__btn">
-        <app-primary-btn Texto="Share"></app-primary-btn>
+        <app-primary-btn Texto="Share" (onClickFunction)="create()" ></app-primary-btn>
     </div>
 
     <app-cards></app-cards>
 
-            
+
 </div>

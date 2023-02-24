@@ -16,7 +16,7 @@
         <button class="icons_btn"><img class="icon invert" src="../../../../assets/icons/calendar.svg" alt="calendar"></button>
     </div>
 
-    <app-cards></app-cards>
+    <app-cards *ngIf="messages.length > 0" [messages]="messages"></app-cards>
 
             
 </div>

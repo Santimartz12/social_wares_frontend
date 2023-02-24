@@ -44,8 +44,9 @@ export class LoginComponent {
     //TODO: Guardar la informacion en local storage mientras
     
     this.authServices.LoginUser(newUser).subscribe({
-      next: () => {
+      next: (user) => {
         this.passwordIncorrecta = false;
+        this.authServices.guardarLocalStg(user);
         this.router.navigate(['home/messages'])},
       error: (error) => {
         this.passwordIncorrecta = true;

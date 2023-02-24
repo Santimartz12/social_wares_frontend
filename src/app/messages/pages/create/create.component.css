@@ -30,7 +30,6 @@ input, textarea{
     font-family: var(--primary__font);
     font-size: 13px;
     font-weight: 600;
-    margin: 0 0 20px 0;
     padding: 10px 15px;
     width: calc(100% - 30px);
 }
@@ -39,4 +38,16 @@ input, textarea{
     width: 50%;
     align-self: flex-end;
     margin-bottom: 20px;
+}
+
+.create_forms span {
+    color: red;
+    font-family: var(--primary__font);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.create_forms div {
+    margin: 10px;
 }

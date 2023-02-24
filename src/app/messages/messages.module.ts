@@ -9,6 +9,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CreateComponent } from './pages/create/create.component';
 import { MymsgComponent } from './pages/mymsg/mymsg.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     MymsgComponent
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     MessagesRoutingModule,
     HttpClientModule,

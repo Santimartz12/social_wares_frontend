@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from 'src/app/interfaces/users';
+import { Users, UsersNoPassword } from 'src/app/interfaces/users';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -45,8 +45,9 @@ export class RegisterComponent {
     }
 
     this.authServices.registerUser(newUser).subscribe({
-      next: () => {
+      next: (user: UsersNoPassword) => {
         this.emailUsed = false;
+        this.authServices.guardarLocalStg(user);
         this.router.navigate(['home/messages'])},
       error: (error) => {
         this.emailUsed = true;

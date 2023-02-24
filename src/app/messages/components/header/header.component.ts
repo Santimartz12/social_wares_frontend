@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Message } from 'src/app/interfaces/messages';
 import { OptionsMenu } from 'src/app/interfaces/optionsMenu';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,12 @@ import { OptionsMenu } from 'src/app/interfaces/optionsMenu';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(
+    private authServices : AuthService,
+  ){
+
+  }
 
   options: OptionsMenu[] = [
     {
@@ -52,6 +59,12 @@ export class HeaderComponent {
     } else{
       this.isModalMsgSelected = true;
       this.isMenuSelected = false;
+    }
+  }
+
+  verificarlogout(route: String){
+    if(route == 'Logout'){
+      this.authServices.eliminarLocalStg();
     }
   }
 

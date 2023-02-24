@@ -11,7 +11,27 @@ export class AuthService {
 
   private _baseUrl: string = 'http://localhost:4000/api';
 
-  constructor(private http: HttpClient) { }
+
+  guardarLocalStg(user : UsersNoPassword){
+    localStorage.setItem('user-data', JSON.stringify(user));
+  }
+
+  cargarLocalStg() : UsersNoPassword | null{
+    if(localStorage.getItem('user-data')){
+      return JSON.parse(localStorage.getItem('user-data')!);
+    }
+    else{
+      return null;
+    }
+  }
+  
+  eliminarLocalStg(){
+    localStorage.removeItem('user-data');
+  }
+
+  constructor(private http: HttpClient) { 
+    
+  }
 
   registerUser(user : Users): Observable<UsersNoPassword>{
     return this.http.post<UsersNoPassword>(`${this._baseUrl}/auth/register`, user)

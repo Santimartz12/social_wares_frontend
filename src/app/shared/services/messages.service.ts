@@ -23,10 +23,8 @@ export class MessagesService {
   }
 
   getMyMsg():Observable<Message[]>{
-
     const id = this.authService.cargarLocalStg()?.id!;
     return this.http.get<Message[]>(`${this._baseUrl}/message?user_id=${id}`);
-  
   }
 
   getbyQuery(query: string ):Observable<Message[]>{

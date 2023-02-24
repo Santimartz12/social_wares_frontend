@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     .subscribe(resp => this.messages = resp);
   }
 
-  //TODO: Solucionar bug
+  //TODO: Solucionar bug, los valores que recibe el backend es con fecha en milisegundos
   filtrarMsg(){
     console.log(this.fecha)
     this.messageService.getbyTime(this.fecha).subscribe(

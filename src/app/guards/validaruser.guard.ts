@@ -12,6 +12,8 @@ export class ValidaruserGuard implements CanActivate, CanLoad {
 
   canActivate(): Observable<boolean> | boolean {
 
+
+    //* Se validan mediante los datos del usuario en el LocalStorage
     console.log('Can Activate');
     if(this.authServices.cargarLocalStg() == null){
       this.router.navigate(['/auth/register']);

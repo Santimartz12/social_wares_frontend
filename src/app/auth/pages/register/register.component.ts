@@ -39,7 +39,7 @@ export class RegisterComponent {
       return;
     }
 
-    //Construimos el objeto para publicarlo en la base de datos
+    //* Construimos el objeto para publicarlo en la base de datos
     const newUser: Users = {
       email: this.registerForm.get('email')?.value,
       fullname: this.registerForm.get('name')?.value,
@@ -47,6 +47,7 @@ export class RegisterComponent {
       username: this.registerForm.get('nickname')?.value,
     }
 
+    //* Registro del usuario y verificacion de que el email no estuviera repetido
     this.authServices.registerUser(newUser).subscribe({
       next: (user: UsersNoPassword) => {
         this.emailUsed = false;

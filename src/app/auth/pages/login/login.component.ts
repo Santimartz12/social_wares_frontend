@@ -21,16 +21,21 @@ export class LoginComponent {
     private authServices: AuthService,
   ) { }
 
+
+  //* Formulario del Login
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
 
+  //* Validaciones para los inputs
   validarForm(campo: String) {
     return this.loginForm.controls[campo.toString()]
       .errors && this.loginForm.controls[campo.toString()].touched
   }
 
+
+  //* Validacion de los datos finales y login del usuario
   login() {
     
     if(this.loginForm.invalid){
@@ -38,14 +43,12 @@ export class LoginComponent {
       return;
     }
 
-    //Construimos el objeto para publicarlo en la base de datos
+    //* Construimos el objeto para publicarlo en la base de datos
     const newUser : UserLogin = {
       email: this.loginForm.get('email')?.value,
       password: this.loginForm.get('password')?.value,
     }
-    
-    //TODO: Guardar la informacion en local storage mientras
-    
+     
     this.authServices.LoginUser(newUser).subscribe({
       next: (user) => {
         this.passwordIncorrecta = false;

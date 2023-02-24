@@ -8,15 +8,18 @@
         <app-auth-btn Text="Sign Up" (onClickExecute)="goToSignUp()"></app-auth-btn>
 
         <form class="login_form" [formGroup]="loginForm">
+
             <label for="email">Email Adress</label>
             <input type="email" formControlName="email" name="email" id="email" placeholder="Example@gmail.com">
             <span *ngIf="validarForm('email')">Escriba un email válido</span>
             <div></div>
+
             <label for="password">Password</label>
             <input type="password" formControlName="password" name="password" id="password" placeholder="Password">
             <span *ngIf="validarForm('password')">La contraseña debe ser mayor a 6 caracteres</span>
             <span *ngIf="passwordIncorrecta">Contraseña Incorrecta</span>
             <div></div>
+
         </form>
 
         <app-primary-btn Texto="Sign In" (onClickFunction)="login()"></app-primary-btn>

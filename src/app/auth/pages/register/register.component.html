@@ -27,7 +27,7 @@
             <span *ngIf="emailUsed">Este correo ya ha sido utilizado</span>
             <div></div>
 
-            <!-- TODO: Cambiar visibilidad de la contraseña -->
+            <!-- TODO: cambio de visibilidad en el input -->
             <label for="password">Password</label>
             <input type="password" name="password" formControlName="password" id="password" placeholder="Password">
             <span *ngIf="validarForm('password')">La contraseña debe ser mayor a 6 caracteres</span>
@@ -39,10 +39,5 @@
     </div>
 
     <app-auth-footer></app-auth-footer>
-
-    <pre>
-        {{registerForm.valid | json}}
-    </pre>
-
 
 </section>

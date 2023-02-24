@@ -26,3 +26,7 @@ Proyecto construido con Angular 15.0.1.
 - Todos los mensajes
 - Filtrar mensajes
 
+### Aspectos por terminar:
+- El filtro por fecha de creación
+- la opción de editar los comentarios personales
+- El dropdown con previsualización del contenido

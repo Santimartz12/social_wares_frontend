@@ -15,12 +15,5 @@ export class CardsComponent {
   //Estamos diciendole a TypeScript que nosotros controlamos esto
   @Input('messages') messages! : Message[];
 
-  
-  constructor(
-    private usersServices : AuthService,
-  ){
-    
-  }
-
 
 }

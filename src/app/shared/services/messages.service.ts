@@ -29,5 +29,13 @@ export class MessagesService {
   
   }
 
+  getbyQuery(query: string ):Observable<Message[]>{
+    return this.http.get<Message[]>(`${this._baseUrl}/message?username=${query}`);
+  }
+  
+  getbyTime(query : number): Observable<Message[]>{
+    return this.http.get<Message[]>(`${this._baseUrl}/message?time=${query}`);
+  }
+
 
 }

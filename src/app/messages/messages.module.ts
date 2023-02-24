@@ -9,7 +9,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CreateComponent } from './pages/create/create.component';
 import { MymsgComponent } from './pages/mymsg/mymsg.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FullnamePipe } from '../pipes/fullname.pipe';
 
 
@@ -28,6 +28,7 @@ import { FullnamePipe } from '../pipes/fullname.pipe';
     MessagesRoutingModule,
     HttpClientModule,
     SharedModule,
+    FormsModule,
   ]
 })
 export class MessagesModule { }

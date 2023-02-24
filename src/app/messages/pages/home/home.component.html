@@ -3,17 +3,17 @@
     <h2 class="home__title">All messages</h2>
 
 
-    <label for="nickname">Nickname</label>
+    <label for="nickname" >Nickname</label>
     <div class="style_input">
-        <input type="text" name="nickname" id="nickname" placeholder="Nickname">
-        <button class="icons_btn"><img class="icon" src="../../../../assets/icons/lupa.svg" alt="buscar"></button>
+        <input [(ngModel)]="nickname" type="text" name="nickname" id="nickname" placeholder="Nickname">
+        <button (click)="buscarUsers()" class="icons_btn"><img class="icon" src="../../../../assets/icons/lupa.svg" alt="buscar"></button>
     </div>
 
     <label for="date">Date select</label>
 
     <div class="style_input">
-        <input type="datetime" name="date" id="date" placeholder="10 - 20 - 22">
-        <button class="icons_btn"><img class="icon invert" src="../../../../assets/icons/calendar.svg" alt="calendar"></button>
+        <input [(ngModel)]='fecha' type="datetime-local" name="date" id="date" placeholder='02/24/2023'>
+        <button (click)="filtrarMsg()" class="icons_btn"><img class="icon invert" src="../../../../assets/icons/calendar.svg" alt="calendar"></button>
     </div>
 
     <app-cards *ngIf="messages.length > 0" [messages]="messages"></app-cards>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Message } from 'src/app/interfaces/messages';
 
 @Component({
   selector: 'app-cards',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
+
+  //Estamos diciendole a TypeScript que nosotros controlamos esto
+  @Input('messages') messages : Message[] = [];
+
 
 }

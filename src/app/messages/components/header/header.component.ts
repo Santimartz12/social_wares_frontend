@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Message } from 'src/app/interfaces/messages';
+import { OptionsMenu } from 'src/app/interfaces/optionsMenu';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +9,62 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  options: OptionsMenu[] = [
+    {
+      imgUrl: "../../../../assets/icons/create.svg",
+      route: "/home/create",
+      text: 'Create Messages'
+    },
+    {
+      imgUrl: "../../../../assets/icons/send.svg",
+      route: "/home/my-msg",
+      text: 'My Messages'
+    },
+    {
+      imgUrl: "../../../../assets/icons/chatbubbles-sharp.svg",
+      route: "/home/messages",
+      text: 'See all Messages'
+    },
+    {
+      imgUrl: "../../../../assets/icons/log-in-sharp.svg",
+      route: "/auth/login",
+      text: 'Logout'
+    },
+  ];
+
+  messages: Message[] = [];
+
   isMenuSelected = false;
+  isModalMsgSelected = true;
 
   toogleMenu(){
-    this.isMenuSelected = !this.isMenuSelected;
+    if(this.isMenuSelected){
+      this.isMenuSelected = false;
+    }else{
+      this.isMenuSelected = true;
+      this.isModalMsgSelected = false;
+    }
+  }
+
+  toogleModalMsg(){
+    if(this.isModalMsgSelected){
+      this.isModalMsgSelected = false;
+    } else{
+      this.isModalMsgSelected = true;
+      this.isMenuSelected = false;
+    }
+  }
+
+  get urlImgMenu(){
+    return this.isMenuSelected 
+    ? '../../../../assets/icons/menu-dark.svg'
+    : "../../../../assets/icons/menu.svg";
+  }
+
+  get urlModalMsg(){
+    return this.isModalMsgSelected 
+    ? "../../../../assets/icons/chatbox-ellipses-dark.svg"
+    : "../../../../assets/icons/chatbox-ellipses.svg"
   }
 
 }

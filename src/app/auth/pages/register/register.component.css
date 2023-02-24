@@ -35,6 +35,18 @@
     margin: 7px;
 }
 
+.register_form span {
+    color: red;
+    font-family: var(--primary__font);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.register_form div {
+    margin: 10px;
+}
+
 .register_form input {
     background-color: var(--background_color);
     border-radius: 100px;
@@ -44,7 +56,6 @@
     font-family: var(--primary__font);
     font-size: 13px;
     font-weight: 600;
-    margin: 0 0 20px 0;
     padding: 10px 15px;
     width: calc(100% - 30px);
 }

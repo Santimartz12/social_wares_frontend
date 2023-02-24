@@ -2,12 +2,25 @@
     <div class="header_container">
         <img class="header__logo" src="../../../../assets/icons/logo.svg" alt="logo Wires">
         <div class="container_btns">
-            <button><img src="../../../../assets/icons/chatbox-ellipses.svg" alt="messages"></button>
-            <button (click)="toogleMenu()"><img src="../../../../assets/icons/menu.svg" alt="messages"></button>
+            <button (click)="toogleModalMsg()" [ngClass]="{ 'active__btn': isModalMsgSelected}"><img [src]=urlModalMsg alt="messages"></button>
+            <button (click)="toogleMenu()" [ngClass]="{ 'active__btn': isMenuSelected}"><img [src]=urlImgMenu alt="menu"></button>
         </div>
     </div>
 </div>
 
-<div>
+<div class="modal__menu" *ngIf="isMenuSelected">
+    <h3 class="modal__title">Santiago Martinez</h3>
+    <a class="link__option" *ngFor="let option of options" routerLink={{option.route}} routerLinkActive="active_option" (click)="isMenuSelected = false">
+        <div class='option_container'>
+            <img src={{option.imgUrl}} alt="create" class="img_option">
+            <p class="title_link_option">{{option.text}}</p>
+        </div>
+    </a>
+</div>
 
+<div class="modal_messages" *ngIf="isModalMsgSelected">
+    <h3 class="modal__title">Recent posts</h3>
+    <hr>
+    <h4 class="modal_card_title" *ngFor="let message of messages">{{message.title}}</h4>
+    <hr>
 </div>

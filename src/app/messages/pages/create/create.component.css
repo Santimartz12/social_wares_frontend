@@ -1,0 +1,42 @@
+.create__container{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+}
+
+.create__title{
+    font-family: var(--primary__font);
+    font-weight: 600;
+    color: var(--primary__color);
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+label {
+    color: var(--primary__color);
+    font-family: var(--primary__font);
+    font-size: 13px;
+    font-weight: 500;
+    margin: 7px;
+}
+
+input, textarea{
+    background-color: var(--background_color);
+    border-radius: 20px;
+    border: 1.5px solid var(--secondary__color);
+    box-sizing: content-box;
+    color: var(--light_color);
+    font-family: var(--primary__font);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+}
+
+.container__btn{
+    width: 50%;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}

@@ -7,31 +7,41 @@
     <div class="container_register">
         <app-auth-btn Text="Sign In" (onClickExecute)="goToSignIn()"></app-auth-btn>
 
-        <form class="register_form">
-            
+        <form class="register_form" [formGroup]="registerForm">
+
             <label for="nickname">Nickname</label>
-            <input type="text" name="nickname" id="nickname" placeholder="Nickname">
-            
-            
+            <input type="text" formControlName="nickname" name="nickname" id="nickname" placeholder="Nickname">
+            <span *ngIf="validarForm('nickname')">El nickname debe tener al menos 3 caracteres</span>
+            <div></div>
+
+
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Full name">
-            
-            
+            <input type="text" name="name" id="name" formControlName="name" placeholder="Full name">
+            <span *ngIf="validarForm('name')">Su nombre completo debe tener al menos 8 caracteres</span>
+            <div></div>
+
+
             <label for="email">Email Adress</label>
-            <input type="text" name="email" id="email" placeholder="Example@gmail.com">
-            
-            
-            <!-- TODO: Cambiar visibi lidad de la contraseña -->
+            <input type="text" name="email" id="email" formControlName="email" placeholder="Example@gmail.com">
+            <span *ngIf="validarForm('email')">Escriba un correo electrónico válido</span>
+            <div></div>
+
+            <!-- TODO: Cambiar visibilidad de la contraseña -->
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" formControlName="password" id="password" placeholder="Password">
+            <span *ngIf="validarForm('password')">La contraseña debe ser mayor a 6 caracteres</span>
         </form>
 
 
         <app-primary-btn Texto="Create" (onClickFunction)="createUser()"></app-primary-btn>
 
-    </div> 
+    </div>
 
     <app-auth-footer></app-auth-footer>
-      
+
+    <pre>
+        {{registerForm.valid | json}}
+    </pre>
+
 
 </section>

@@ -1,35 +1,10 @@
-<div class="card">
-    <h4 class="title">Titulo super epico que deja a la gente con la boca abierta</h4>
-    <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus corporis, placeat itaque animi asperiores iure odio. </p>
+<div class="card" *ngFor="let message of messages">
+    <h4 class="title">{{message.title}}</h4>
+    <p class="message">{{message.message}}</p>
     <div class="info__user">
-        <p class="time">10:05 am 20/11/22</p>
-        <p class="user__name">Daniel Amadeus</p>
+        <p class="time">{{message.time | date : "hh:mm a dd/mm/yy"}}</p>
+        <p class="user__name">{{message.user_id}}</p>
     </div>
 </div>
 
-<div class="card">
-    <h4 class="title">Titulo super epico que deja a la gente con la boca abierta</h4>
-    <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus corporis, placeat itaque animi asperiores iure odio. </p>
-    <div class="info__user">
-        <p class="time">10:05 am 20/11/22</p>
-        <p class="user__name">Daniel Amadeus</p>
-    </div>
-</div>
 
-<div class="card">
-    <h4 class="title">Titulo super epico que deja a la gente con la boca abierta</h4>
-    <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus corporis, placeat itaque animi asperiores iure odio. </p>
-    <div class="info__user">
-        <p class="time">10:05 am 20/11/22</p>
-        <p class="user__name">Daniel Amadeus</p>
-    </div>
-</div>
-
-<div class="card">
-    <h4 class="title">Titulo super epico que deja a la gente con la boca abierta</h4>
-    <p class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa necessitatibus corporis, placeat itaque animi asperiores iure odio. </p>
-    <div class="info__user">
-        <p class="time">10:05 am 20/11/22</p>
-        <p class="user__name">Daniel Amadeus</p>
-    </div>
-</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { PrimaryBtnComponent } from './components/primary-btn/primary-btn.component';
 
 
@@ -13,7 +14,8 @@ import { PrimaryBtnComponent } from './components/primary-btn/primary-btn.compon
     PrimaryBtnComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
   ]
 })
 export class SharedModule { }

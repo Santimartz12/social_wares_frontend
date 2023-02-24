@@ -23,9 +23,84 @@
     align-items: center;
 }
 
+.modal__title{
+    font-family: var(--primary__font);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 20px;
+}
+
 button{
     background-color: #ffffff00;
     border: none;
+    outline-style: none;
 }
+
+.modal__menu{
+    z-index: 2;
+    position: absolute;
+    right: 8%;
+    top: 80px;
+    background-color: var(--light_color);
+    width: 250px;
+    border-radius: 5px;
+}
+
+.modal_messages{
+    z-index: 2;
+    position: absolute;
+    right: 20%;
+    top: 80px;
+    background-color: var(--light_color);
+    width: 250px;
+    border-radius: 5px;
+}
+
+.option_container{
+    height: 50px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.img_option{
+    width: 24px;
+}
+
+.link__option{
+    text-decoration: none;
+    display: block;
+}
+
+.title_link_option{
+    font-family: var(--primary__font);
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+
+}
+
+.active_option {
+    background-color: var(--primary__color);
+}
+
+.active__btn {
+    padding-top: 3px;
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary__color);
+    border-radius: 100%;
+
+}
+
+.modal_card_title{
+    padding: 0px 20px;
+    font-family: var(--primary__font);
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+}
+
 
 /* TODO: Responsive en esta parte */

@@ -1,0 +1,26 @@
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.primary_text{
+    color: var(--secondary__color);
+    font-family: var(--primary__font);
+    font-size: 13px;
+}
+
+.copy_text{
+    font-weight: 500;
+    color: var(--light_color);
+}
+
+.secondary_text{
+    color: var(--primary__color);
+    margin-top: 4px;
+    font-weight: 500;
+    font-family: var(--primary__font);
+    font-size: 10px;
+}
